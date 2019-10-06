@@ -64,7 +64,16 @@ h1 {
 .cards {
 }
 
+.cards__row {
+  display: flex;
+}
+
+.cards__col {
+  display: flex
+}
+
 /* TODO útfæra grid fyrir cards */
+
 
 .card {
   display: flex;
@@ -147,4 +156,8 @@ h1 {
   .card__text {
     margin-bottom: 20px;
   }
+}
+
+@media (min-width: 700px) {
+
 }
