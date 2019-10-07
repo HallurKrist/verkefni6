@@ -27,15 +27,15 @@ h1 {
   margin: 20px 0;
 }
 
-.text {
+.grid__text {
   margin-bottom: 20px;
 }
 
-.text p {
+.grid__text p {
   margin-bottom: 20px;
 }
 
-.image {
+.grid__image {
   max-width: 100%;
   margin-bottom: 20px;
 }
@@ -43,6 +43,12 @@ h1 {
 .cards__first-flex-item {
   order: -1;
 }
+
+.grid__last-item {
+  order: 2;
+}
+
+
 
 /* grid fyrir efni, setja þarf upp í html */
 
@@ -59,6 +65,7 @@ h1 {
   padding-left: 10px;
 }
 
+
 /* TODO setja upp grid fyrir >= 1000px */
 
 /* TODO koma mynd fyrir á öðrum stað í < 1000px */
@@ -66,6 +73,7 @@ h1 {
 /* grid fyrir cards */
 
 .cards {
+  justify-content: space-around;
 }
 
 .cards__row {
@@ -87,6 +95,7 @@ h1 {
 .card {
   display: flex;
   flex-direction: column;
+  align-content: space-between;
 
   margin-bottom: 10px;
   padding: 10px;
@@ -169,12 +178,37 @@ h1 {
 }
 
 @media (min-width: 700px) {
+  .card {
+    max-width: none;
+    /* flex-grow: 1; */
+    /* align-self: stretch; */
+  }
+  
   .cards__col {
     width: 50%;
+    align-content: stretch;
   }
   .cards {
     margin-bottom: 40px;
   }
 }
 
-@media
+@media (min-width: 1000px) {
+  .grid__col {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+
+  .grid__row {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .cards__col {
+    width: 33.3333333%
+  }
+
+  .grid__last-item {
+    order: 0;
+  }
+}
